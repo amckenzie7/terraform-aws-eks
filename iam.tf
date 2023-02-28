@@ -18,6 +18,10 @@ resource "aws_iam_role" "cluster" {
   ]
 }
 POLICY
+  tags = {
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "cluster-AmazonEKSClusterPolicy" {
@@ -48,6 +52,10 @@ resource "aws_iam_role" "node" {
   ]
 }
 POLICY
+  tags = {
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "node-AmazonEKSWorkerNodePolicy" {
@@ -68,4 +76,8 @@ resource "aws_iam_role_policy_attachment" "node-AmazonEC2ContainerRegistryReadOn
 resource "aws_iam_instance_profile" "node" {
   name = "${var.cluster-name}-eks-node-instance-profile"
   role = aws_iam_role.node.name
+  tags = {
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
+  }
 }

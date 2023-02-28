@@ -19,6 +19,8 @@ resource "aws_eks_node_group" "eks-node-group" {
     aws_iam_role_policy_attachment.node-AmazonEKS_CNI_Policy
   ]
   tags = {
-    Name = "${var.cluster-name}-default-node-group"
+    Name     = "${var.cluster-name}-default-node-group"
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
   }
 }
