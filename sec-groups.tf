@@ -29,7 +29,9 @@ module "cluster-sg" {
   egress_rules       = ["all-all"]
 
   tags = {
-    Name = "${var.cluster-name}-eks-cluster-sg"
+    Name     = "${var.cluster-name}-eks-cluster-sg"
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
   }
 }
 
@@ -67,6 +69,8 @@ module "node-sg" {
   tags = {
     Name                                        = "${var.cluster-name}-eks-node-sg"
     "kubernetes.io/cluster/${var.cluster-name}" = "owned"
+    git_org                                     = "amckenzie7"
+    git_repo                                    = "terraform-aws-eks"
   }
 }
 

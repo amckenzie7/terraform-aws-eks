@@ -23,6 +23,8 @@ module "vpc" {
   tags = {
     Name                                        = "${var.cluster-name}-vpc"
     "kubernetes.io/cluster/${var.cluster-name}" = "shared"
+    git_org                                     = "amckenzie7"
+    git_repo                                    = "terraform-aws-eks"
   }
 
   public_subnet_tags = {

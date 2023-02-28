@@ -18,4 +18,8 @@ resource "aws_eks_cluster" "eks" {
     aws_iam_role_policy_attachment.cluster-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.cluster-AmazonEKSServicePolicy,
   ]
+  tags = {
+    git_org  = "amckenzie7"
+    git_repo = "terraform-aws-eks"
+  }
 }
