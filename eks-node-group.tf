@@ -20,5 +20,6 @@ resource "aws_eks_node_group" "eks-node-group" {
   ]
   tags = {
     Name = "${var.cluster-name}-default-node-group"
+    user = "pchandaliya"
   }
 }
