@@ -30,6 +30,7 @@ module "cluster-sg" {
 
   tags = {
     Name = "${var.cluster-name}-eks-cluster-sg"
+    user = "pchandaliya"
   }
 }
 
@@ -67,6 +68,7 @@ module "node-sg" {
   tags = {
     Name                                        = "${var.cluster-name}-eks-node-sg"
     "kubernetes.io/cluster/${var.cluster-name}" = "owned"
+    user                                        = "pchandaliya"
   }
 }
 
