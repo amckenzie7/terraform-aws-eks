@@ -23,6 +23,7 @@ module "vpc" {
   tags = {
     Name                                        = "${var.cluster-name}-vpc"
     "kubernetes.io/cluster/${var.cluster-name}" = "shared"
+    user                                        = "pchandaliya"
   }
 
   public_subnet_tags = {
